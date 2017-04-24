@@ -71,7 +71,7 @@ app.get('/bad', (req, res) => {
     res.send({
         errorMessage: `Unable to handle request`
     });
-})
+});
 
 app.listen(port, () => {
     console.log(`server is up on port ${port}`);
