@@ -3,8 +3,6 @@ const hbs = require('hbs');
 var app = express(); // here we create a new express app, call express as a function
 const fs = require('fs');
 
-const port = process.env.PORT || 3000;
-
 // Register partials to create reusable pieces of html
 hbs.registerPartials(__dirname + '/views/partials');
 
@@ -73,6 +71,6 @@ app.get('/bad', (req, res) => {
     });
 });
 
-app.listen(port, () => {
-    console.log(`server is up on port ${port}`);
+app.listen(process.env.PORT || 3000, function(){
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
